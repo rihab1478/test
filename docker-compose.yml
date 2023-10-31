@@ -1,6 +1,6 @@
 version: "3.3"
 services:
- test-back:
+  test-back:
     depends_on:
       - mysqldb-test
     image: rihab23/devops-project:latest
@@ -12,14 +12,14 @@ services:
     stdin_open: true
     tty: true
   mysqldb-test:
-    image: mysql:5.7
-    restart: unless-stopped
-    ports:
-      - 3307:3306
-    volumes:
-      - db:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: achatdb
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      image: mysql:5.7
+      restart: unless-stopped
+      ports:
+        - 3307:3306
+      volumes:
+        - db:/var/lib/mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: achatdb
+        MYSQL_USER: root
+        MYSQL_PASSWORD: root
