@@ -24,11 +24,5 @@ services:
       - .m2:/root/.m2
     stdin_open: true
     tty: true
-  devops-project-front:
-    image: rihab23/front:latest
-    ports:
-      - 80:80
-    depends_on:
-      - devops-project-back
 volumes:
   db:
