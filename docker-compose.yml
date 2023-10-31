@@ -9,6 +9,7 @@ services:
     volumes:
       - db:/var/lib/mysql
     environment:
+        SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: achatdb
   devops-project-back-test:
@@ -17,7 +18,7 @@ services:
     image: rihab23/devops-project:latest
     restart: on-failure
     ports:
-      - 8000-8999:8080 
+      - 8089:8089
     volumes:
       - .m2:/root/.m2
     stdin_open: true
