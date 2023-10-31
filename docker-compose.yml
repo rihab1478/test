@@ -11,8 +11,6 @@ services:
     environment:
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: achatdb
-        MYSQL_USER: root
-        MYSQL_PASSWORD: root
   devops-project-back-test:
     depends_on:
       - mysqldb-test
