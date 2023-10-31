@@ -1,17 +1,23 @@
 version: "3.3"
 services:
-  devops-project-back2:
-    image: rihab23/devops-project:latest
-    restart: always
-    ports:
-      - 6868:8082
+ devops-project-back:
     depends_on:
       - mysqldb
+    image: rihab23/devops-project:latest
+    restart: on-failure
+    ports:
+      - 6868:8082
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
   mysqldb:
     image: mysql:5.7
-    restart: always
+    restart: unless-stopped
     ports:
       - 3307:3306
+    volumes:
+      - db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: achatdb
