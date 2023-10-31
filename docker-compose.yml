@@ -17,7 +17,7 @@ services:
     image: rihab23/devops-project:latest
     restart: on-failure
     ports:
-      - 6868:8082
+      - 6868:8080
     volumes:
       - .m2:/root/.m2
     stdin_open: true
