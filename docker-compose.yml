@@ -35,7 +35,7 @@ services:
   appfront:
     image: rihab23/ff:latest
     ports:
-      - 80:80
+      - 8440:8440
     depends_on:
       - app
 volumes:
